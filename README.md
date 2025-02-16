@@ -13,7 +13,6 @@
 
 ## ساختار پروژه
 
-Typing Speed Test/ ├── index.html ├── style.css └── script.js
 
 - **index.html:** فایل اصلی HTML که ساختار صفحه را تعریف می‌کند.
 - **style.css:** فایل استایل‌های CSS با افکت‌ها و طراحی مدرن.
