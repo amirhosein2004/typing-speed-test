@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سنجش سرعت تایپ فارسی با رابط کاربری مدرن">
+    <title>سنجش سرعت تایپ پیشرفته</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/mada.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <header class="masthead">
+        <h1>سنجش سرعت تایپ فارسی</h1>
+    </header>
+    
+    <main class="main">
+        <article class="intro">
+            <p>فرایند سنجش سرعت تایپ بدین گونه است که با شروع تایپ کاربر، تایمر شروع به شمارش زمان میکند و با تایپ هر حرف، مطابقت متن با نمونه بررسی میشود!</p>
+        </article>
+
+        <section class="test-area">
+            <div class="pattern">متن الگو:</div>
+            <div id="origin-text">
+                <p>متن نمونه برای آزمایش سرعت تایپ. این متن باید عیناً تکرار شود!</p>
+            </div>
+
+            <div class="test-wrapper">
+                <textarea 
+                    id="test-area" 
+                    name="textarea" 
+                    rows="5"
+                    placeholder="با شروع تایپ، زمانسنج فعال میشود..."
+                    autocomplete="off"
+                    spellcheck="false"
+                ></textarea>
+            </div>
+
+            <div class="meta">
+                <section id="clock">
+                    <div class="timer">00:00:00</div>
+                </section>
+                <button id="reset">شروع مجدد</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

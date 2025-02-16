@@ -1,0 +1,291 @@
+/*--------------------------------------------------------------
+   🌈 پالت رنگی و متغیرها
+--------------------------------------------------------------*/
+:root {
+    --primary-color: #2A2F4F;
+    --secondary-color: #917FB3;
+    --accent-color: #E5BEEC;
+    --text-dark: #2D3250;
+    --text-light: #F8F6F4;
+    --bg-light: #f8f9fa;
+    --bg-dark: #e9ecef;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /*--------------------------------------------------------------
+     🌟 تنظیمات کلی
+  --------------------------------------------------------------*/
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Mada', 'Segoe UI', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-dark) 100%);
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  /*--------------------------------------------------------------
+     🎩 هدر با افکت شیشه‌ای (Glassmorphism)
+  --------------------------------------------------------------*/
+  .masthead {
+    padding: 1.5rem 2rem;
+    background: rgba(42, 47, 79, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .masthead::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+    pointer-events: none;
+  }
+  
+  /*--------------------------------------------------------------
+     📘 بخش معرفی با افکت hover
+  --------------------------------------------------------------*/
+  .intro {
+    padding: 2rem;
+    background: linear-gradient(135deg, #429890, #327871);
+    color: var(--text-light);
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s var(--transition);
+  }
+  
+  .intro:hover {
+    transform: translateY(-3px);
+  }
+  
+  .intro p {
+    font-size: 1.1em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /*--------------------------------------------------------------
+     ⌨️ بخش تست تایپ به صورت کارت مدرن
+  --------------------------------------------------------------*/
+  .test-area {
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+  }
+  
+  /*--------------------------------------------------------------
+     استایل بخش متن الگو
+  --------------------------------------------------------------*/
+  .pattern {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    text-align: center;
+  }
+  
+  /*--------------------------------------------------------------
+     استایل متن اصلی (Origin Text)
+  --------------------------------------------------------------*/
+  #origin-text {
+    background: rgba(245, 245, 245, 0.9);
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(4px);
+    margin-bottom: 1.5rem;
+  }
+  
+  /*--------------------------------------------------------------
+     جعبه تایپ و تکست‌باکس
+  --------------------------------------------------------------*/
+  .test-wrapper {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    transition: var(--transition);
+    margin-bottom: 1.5rem;
+  }
+  
+  .test-wrapper:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 16px rgba(145, 127, 179, 0.1);
+  }
+  
+  .test-wrapper textarea {
+    width: 100%;
+    min-height: 150px;
+    font-size: 1.15rem;
+    padding: 1rem;
+    border: none;
+    background: transparent;
+    resize: vertical;
+    color: var(--text-dark);
+    line-height: 1.8;
+    font-family: inherit;
+  }
+  
+  .test-wrapper textarea::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+  }
+  
+  /*--------------------------------------------------------------
+     وضعیت‌های صحیح/اشتباه
+  --------------------------------------------------------------*/
+  .test-wrapper.correct {
+    border-color: #4CAF50;
+    animation: pulse-green 1.5s infinite;
+  }
+  
+  .test-wrapper.incorrect {
+    border-color: #FF5252;
+    animation: shake 0.4s ease;
+  }
+  
+  /*--------------------------------------------------------------
+     ⏱️ تایمر و دکمه کنترل
+  --------------------------------------------------------------*/
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .timer {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    background: rgba(227, 227, 227, 0.9);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  
+  #reset {
+    padding: 0.8rem 1.8rem;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #430a69, #5e1f92);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #reset::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  #reset:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(94, 31, 146, 0.3);
+  }
+  
+  #reset:hover::before {
+    opacity: 1;
+  }
+  
+  /*--------------------------------------------------------------
+     📱 ریسپانسیو (واکنش‌گرا)
+  --------------------------------------------------------------*/
+  @media (max-width: 768px) {
+    body {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+    
+    .test-area {
+      padding: 1.5rem;
+      max-width: 95%;
+    }
+    
+    .timer {
+      font-size: 1.8rem;
+      padding: 0.6rem 1rem;
+    }
+    
+    #reset {
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+    }
+  }
+  
+  /*--------------------------------------------------------------
+     🎥 انیمیشن‌های سفارشی
+  --------------------------------------------------------------*/
+  @keyframes pulse-green {
+    0% {
+      box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.2);
+    }
+    70% {
+      box-shadow: 0 0 0 12px rgba(76, 175, 80, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-10px);
+    }
+    40% {
+      transform: translateX(10px);
+    }
+    60% {
+      transform: translateX(-10px);
+    }
+    80% {
+      transform: translateX(10px);
+    }
+  }
+  
